@@ -98,28 +98,9 @@ export default function TransactionList({ transactions, setShowDetails }) {
           { field: 'amount', headerName: 'Amount', minWidth: 200  },
           { field: 'type', headerName: 'Type', minWidth: 150  },
           { field: 'transaction_date', headerName: 'Transaction Date', minWidth: 150  },
-          // { field: 'disclosure_date', headerName: 'Disclosure Date', minWidth: 150  },
-          // { field: 'ptr_link', headerName: 'Periodic Transaction Report', minWidth: 220,
-          //   renderCell: (param) => (
-          //     <strong>
-          //       {/* {params.value.getFullYear()} */}
-          //       <Button
-          //         variant="contained"
-          //         color="primary"
-          //         size="small"
-          //         style={{ width: 200 }}
-          //         target="_blank"
-          //         href={param.value}
-          //       >
-          //         View PTR
-          //       </Button>
-          //     </strong>
-          //   ),
-          // },
           { field: 'learnMore', headerName: 'Learn More', minWidth: 220, 
             renderCell: (param) => (
               <strong>
-                {/* {params.value.getFullYear()} */}
                 <Button
                   variant="contained"
                   color="primary"

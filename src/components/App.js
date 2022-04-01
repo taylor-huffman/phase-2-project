@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={0}>
           <Grid item xs={3}>
             <TransactionDetails showDetails={showDetails} setShowDetails={setShowDetails} />
           </Grid>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import { Close } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 
 export default function TransactionDetails({ showDetails, setShowDetails }) {
 
@@ -10,8 +11,8 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
 
   function BuildDetails() {
     return (
-      <div className='transaction-details'>
-        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'center', cursor: 'pointer', width: 'fit-content', margin: 'auto' }}>Clear Details<Close /></p>
+      <div className='transaction-details' style={{ position: 'relative' }}>
+        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'flex-end', cursor: 'pointer', position: 'absolute', right: '0' }}><Tooltip title="Clear Details"><Close /></Tooltip></p>
         <h1>{showDetails.representative}</h1>
         <p><span>District:</span> {showDetails.district}</p>
         <p><span>Ticker:</span> {showDetails.ticker}</p>

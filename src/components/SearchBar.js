@@ -60,7 +60,7 @@ export default function SearchBar({ search, setSearch }) {
                 inputProps={{ 'aria-label': 'search' }}
                 onChange={handleOnChange}
                 value={search}
-                // style={{ width: 160 }}
+                style={{ width: '100%' }}
             />
         </Search>
     )

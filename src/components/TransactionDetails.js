@@ -3,19 +3,6 @@ import { Button } from '@mui/material'
 
 export default function TransactionDetails({ showDetails }) {
 
-  // const { amount,
-  //   asset_description,
-  //   cap_gaims_over_200_usd,
-  //   disclosure_date,
-  //   district,
-  //   owner,
-  //   ptr_link,
-  //   representative,
-  //   ticker,
-  //   transaction_date,
-  //   type,
-  //  } = showDetails
-
   function BuildDetails() {
     return (
       <div className='transaction-details'>

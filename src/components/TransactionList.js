@@ -94,7 +94,7 @@ export default function TransactionList({ transactions, setShowDetails }) {
   }
 
   return (
-    <div style={{ height: '86vh', width: '100%' }}>
+    <div style={{ height: '76vh', width: '100%' }}>
       <div style={{ display: 'flex', height: '100%' }}>
       <div style={{ flexGrow: 1 }}>
         <DataGrid

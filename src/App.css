@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+.transaction-details {
+  /* text-align: left; */
+  padding: 40px;
+}
+
+.transaction-details p span {
+  font-weight: bold;
+}

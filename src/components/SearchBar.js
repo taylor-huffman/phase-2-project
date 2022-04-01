@@ -8,20 +8,20 @@ const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(0),
     marginLeft: 0,
+    marginBottom: '5px',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
+      marginLeft: theme.spacing(0),
+      width: '100%',
     },
+    border: '1px solid rgba(224, 224, 224, 1)',
+    textAlign: 'left',
   }));
   
   const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
+    padding: theme.spacing(0, 1.5),
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -39,7 +39,7 @@ const Search = styled('div')(({ theme }) => ({
       transition: theme.transitions.create('width'),
       width: '100%',
       [theme.breakpoints.up('md')]: {
-        width: '20ch',
+        width: '100%',
       },
     },
   }));
@@ -51,7 +51,7 @@ export default function SearchBar({ search, setSearch }) {
       }
 
     return (
-        <Search style={{ border: '1px solid rgba(224, 224, 224, 1)', margin: '0 0 20px', width: '100%', textAlign: 'left' }}>
+        <Search>
             <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>

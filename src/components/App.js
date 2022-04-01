@@ -41,7 +41,7 @@ function App() {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={3}>
-            <TransactionDetails showDetails={showDetails} />
+            <TransactionDetails showDetails={showDetails} setShowDetails={setShowDetails} />
           </Grid>
           <Grid item xs={9} style={{ padding: 40 }}>
             <SearchBar search={search} setSearch={setSearch} />

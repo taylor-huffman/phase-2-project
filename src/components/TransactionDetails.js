@@ -1,11 +1,17 @@
 import React from 'react'
 import { Button } from '@mui/material'
+import { Close } from '@mui/icons-material';
 
-export default function TransactionDetails({ showDetails }) {
+export default function TransactionDetails({ showDetails, setShowDetails }) {
+
+  function handleOnClick() {
+    setShowDetails(null)
+  }
 
   function BuildDetails() {
     return (
       <div className='transaction-details'>
+        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'center', cursor: 'pointer', width: 'fit-content', margin: 'auto' }}>Clear Details<Close /></p>
         <h1>{showDetails.representative}</h1>
         <p><span>District:</span> {showDetails.district}</p>
         <p><span>Ticker:</span> {showDetails.ticker}</p>

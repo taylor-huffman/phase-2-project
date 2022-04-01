@@ -1,8 +1,18 @@
 import React, { useState } from 'react'
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { DataGrid, GridToolbarContainer, GridToolbarColumnsButton, GridToolbarFilterButton, GridToolbarDensitySelector } from '@mui/x-data-grid';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material';
 import { Button } from '@mui/material';
+
+function CustomToolbar() {
+  return (
+    <GridToolbarContainer>
+      <GridToolbarColumnsButton />
+      <GridToolbarFilterButton />
+      <GridToolbarDensitySelector />
+    </GridToolbarContainer>
+  );
+}
 
 const StyledGridOverlay = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -116,7 +126,7 @@ export default function TransactionList({ transactions, setShowDetails }) {
           }
         ]}
           rows={transactions}
-          components={{ Toolbar: GridToolbar, NoRowsOverlay: CustomNoRowsOverlay }}
+          components={{ Toolbar: CustomToolbar, NoRowsOverlay: CustomNoRowsOverlay }}
         />
         </div>
     </div>

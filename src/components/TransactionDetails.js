@@ -42,8 +42,8 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
   function NoDetails() {
     return (
       <div className='transaction-details'>
-        <h2>Click A 'Learn More' Button To See Transaction Details</h2>
-        <img alt='Congress Illustration' src='../media/congressillustration.png' />
+        <h2 style={{ marginBottom: '50px' }}>Click A <span style={{ color: '#1976D2' }}>Learn More</span> Button To See Stock Transaction Details</h2>
+        <img alt='Congress Illustration' src={require('../media/moneypolitics.webp')} style={{ width: '100%' }} />
       </div>
     )
   }

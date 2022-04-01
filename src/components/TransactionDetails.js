@@ -43,6 +43,7 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
     return (
       <div className='transaction-details'>
         <h2>Click A 'Learn More' Button To See Transaction Details</h2>
+        <img alt='Congress Illustration' src='../media/congressillustration.png' />
       </div>
     )
   }

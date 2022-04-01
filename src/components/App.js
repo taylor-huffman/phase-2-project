@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import NavBar from './NavBar';
 import TransactionDetails from './TransactionDetails';
 import TransactionList from './TransactionList';
+import SearchBar from './SearchBar';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
@@ -36,13 +37,14 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar search={search} setSearch={setSearch} />
+      <NavBar />
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={3}>
             <TransactionDetails showDetails={showDetails} />
           </Grid>
           <Grid item xs={9} style={{ padding: 40 }}>
+            <SearchBar search={search} setSearch={setSearch} />
             <TransactionList transactions={transactionsWithId} setShowDetails={setShowDetails} />
           </Grid>
         </Grid>

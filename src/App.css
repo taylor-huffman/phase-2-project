@@ -48,11 +48,11 @@
 }
 
 @media (max-width: 899px) {
-  .container.home .MuiGrid-container {
+  .container.home .MuiGrid-container, .container.about .MuiGrid-container {
     flex-direction: column;
   }
 
-  .container.home .MuiGrid-container .MuiGrid-item {
+  .container.home .MuiGrid-container .MuiGrid-item, .container.about .MuiGrid-container .MuiGrid-item {
     max-width: unset;
     width: 100%;
   }

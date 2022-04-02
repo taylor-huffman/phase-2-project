@@ -40,7 +40,7 @@ const StyledGridOverlay = styled('div')(({ theme }) => ({
 
 export default function TransactionList({ transactions, setShowDetails }) {
 
-  const [pageSize, setPageSize] = useState(50);
+  const [pageSize, setPageSize] = useState(20);
 
   function CustomNoRowsOverlay() {
     return (

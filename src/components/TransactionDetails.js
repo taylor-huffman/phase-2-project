@@ -12,7 +12,7 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
   function BuildDetails() {
     return (
       <div className='transaction-details' style={{ position: 'relative' }}>
-        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'flex-end', cursor: 'pointer', position: 'absolute', right: '15px', top: '35px' }}><Tooltip title="Clear Details"><Close /></Tooltip></p>
+        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'flex-end', cursor: 'pointer', position: 'absolute', right: '13px', top: '20px' }}><Tooltip title="Clear Details"><Close /></Tooltip></p>
         <h1 style={{ marginTop: '35px' }}>{showDetails.representative}</h1>
         <p><span>District:</span> {showDetails.district}</p>
         <p><span>Ticker:</span> {showDetails.ticker}</p>

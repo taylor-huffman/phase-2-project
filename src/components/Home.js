@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import TransactionDetails from './TransactionDetails';
 import TransactionList from './TransactionList';
 import SearchBar from './SearchBar';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
 

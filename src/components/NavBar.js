@@ -4,62 +4,62 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Badge from '@mui/material/Badge';
+// import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 // import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+// import MailIcon from '@mui/icons-material/Mail';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { NavLink } from 'react-router-dom';
 
 
 export default function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  // const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const isMenuOpen = Boolean(anchorEl);
+  // const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  // const handleProfileMenuOpen = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
+  // const handleMenuClose = () => {
+  //   setAnchorEl(null);
+  //   handleMobileMenuClose();
+  // };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
+  // const renderMenu = (
+  //   <Menu
+  //     anchorEl={anchorEl}
+  //     anchorOrigin={{
+  //       vertical: 'top',
+  //       horizontal: 'right',
+  //     }}
+  //     id={menuId}
+  //     keepMounted
+  //     transformOrigin={{
+  //       vertical: 'top',
+  //       horizontal: 'right',
+  //     }}
+  //     open={isMenuOpen}
+  //     onClose={handleMenuClose}
+  //   >
+  //     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+  //     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+  //   </Menu>
+  // );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -79,36 +79,37 @@ export default function NavBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <NavLink
+          to='/'
+          exact
+          style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', marginRight: '10px', textDecoration: 'none' }}
+          activeStyle={{ color: '#1976d2'}}
+          onClick={handleMobileMenuClose}
+          >
+            HOME
+        </NavLink>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+        <NavLink
+          to='/about'
+          exact
+          style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+          activeStyle={{ color: '#1976d2' }}
+          onClick={handleMobileMenuClose}
+          >
+            ABOUT
+        </NavLink>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+      <MenuItem>
+      <NavLink
+            to='/account'
+            exact
+            style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+            activeStyle={{ color: '#1976d2' }}
+            onClick={handleMobileMenuClose}
+            >
+            ACCOUNT
+            </NavLink>
       </MenuItem>
     </Menu>
   );
@@ -130,7 +131,7 @@ export default function NavBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { sm: 'block' } }}
           >
             Congress Stock Tracker
           </Typography>
@@ -154,7 +155,7 @@ export default function NavBar() {
             to='/'
             exact
             style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', marginRight: '10px', textDecoration: 'none' }}
-            activeStyle={{ textDecoration: 'underline'}}
+            activeStyle={{ color: '#add5db'}}
             >
               HOME
             </NavLink>
@@ -162,21 +163,29 @@ export default function NavBar() {
             to='/about'
             exact
             style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-            activeStyle={{ textDecoration: 'underline'}}
+            activeStyle={{ color: '#add5db' }}
             >
               ABOUT
             </NavLink>
+            <NavLink
+            to='/account'
+            exact
+            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+            activeStyle={{ color: '#add5db' }}
+            >
             <IconButton
               size="large"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              // onClick={handleProfileMenuOpen}
               color="inherit"
+              activeStyle={{ color: '#add5db' }}
             >
               <AccountCircle />
             </IconButton>
+            </NavLink>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -193,7 +202,7 @@ export default function NavBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {/* {renderMenu} */}
     </Box>
   );
 }

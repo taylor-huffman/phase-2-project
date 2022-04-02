@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 // import Grid from '@mui/material/Grid';
 import Home from './Home';
 import About from './About';
+import Account from './Account';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
       <Switch>
       <Route exact path='/about'>
           <About />
+        </Route>
+        <Route exact path='/account'>
+          <Account />
         </Route>
         <Route exact path='/'>
           <Home />

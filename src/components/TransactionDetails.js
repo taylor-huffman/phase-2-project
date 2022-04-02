@@ -12,8 +12,8 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
   function BuildDetails() {
     return (
       <div className='transaction-details' style={{ position: 'relative' }}>
-        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'flex-end', cursor: 'pointer', position: 'absolute', right: '0' }}><Tooltip title="Clear Details"><Close /></Tooltip></p>
-        <h1>{showDetails.representative}</h1>
+        <p onClick={handleOnClick} style={{ display: 'flex', justifyContent: 'flex-end', cursor: 'pointer', position: 'absolute', right: '15px', top: '35px' }}><Tooltip title="Clear Details"><Close /></Tooltip></p>
+        <h1 style={{ marginTop: '35px' }}>{showDetails.representative}</h1>
         <p><span>District:</span> {showDetails.district}</p>
         <p><span>Ticker:</span> {showDetails.ticker}</p>
         <p><span>Asset Description:</span> {showDetails.asset_description}</p>
@@ -42,7 +42,7 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
   function NoDetails() {
     return (
       <div className='transaction-details'>
-        <h2 style={{ marginBottom: '50px' }}>Click A <span style={{ color: '#1976D2' }}>Learn More</span> Button To See Stock Transaction Details</h2>
+        <h2 style={{ marginBottom: '50px', padding: '0 25px' }}>Click A <span style={{ color: '#1976D2' }}>Learn More</span> Button To See Stock Transaction Details</h2>
         <img alt='Congress Illustration' src={require('../media/moneypolitics.webp')} style={{ width: '100%' }} />
       </div>
     )

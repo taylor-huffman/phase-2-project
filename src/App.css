@@ -40,9 +40,20 @@
 
 .transaction-details {
   /* text-align: left; */
-  padding: 40px;
+  padding: 40px 0;
 }
 
 .transaction-details p span {
   font-weight: bold;
+}
+
+@media (max-width: 899px) {
+  .container.home .MuiGrid-container {
+    flex-direction: column;
+  }
+
+  .container.home .MuiGrid-container .MuiGrid-item {
+    max-width: unset;
+    width: 100%;
+  }
 }

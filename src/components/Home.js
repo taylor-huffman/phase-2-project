@@ -6,6 +6,7 @@ import TransactionList from './TransactionList';
 import SearchBar from './SearchBar';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { Container } from '@mui/material';
 
 function Home() {
 
@@ -36,17 +37,19 @@ function Home() {
     console.log(showDetails)
   
     return (
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={0}>
+        // <Box sx={{ flexGrow: 1 }}>
+        <Container maxWidth='xxl' className='container home'>
+          <Grid container spacing={0} sx={{ flexGrow: 1 }}>
             <Grid item xs={3}>
               <TransactionDetails showDetails={showDetails} setShowDetails={setShowDetails} />
             </Grid>
-            <Grid item xs={9} style={{ padding: 40 }}>
+            <Grid item xs={9} style={{ padding: '40px 0' }}>
               <SearchBar search={search} setSearch={setSearch} />
               <TransactionList transactions={transactionsWithId} setShowDetails={setShowDetails} />
             </Grid>
           </Grid>
-        </Box>
+          </Container>
+        // </Box>
     );
   }
 

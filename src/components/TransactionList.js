@@ -98,6 +98,7 @@ export default function TransactionList({ transactions, setShowDetails }) {
       <div style={{ display: 'flex', height: '100%' }}>
       <div style={{ flexGrow: 1 }}>
         <DataGrid
+          style={{ boxShadow: '0 10px 20px rgba(0 0 0 / 10%)' }}
           pageSize={pageSize}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           rowsPerPageOptions={[20, 50, 100]}

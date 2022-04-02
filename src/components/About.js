@@ -1,9 +1,12 @@
 import React from 'react'
+import { Container } from '@mui/material'
 
 export default function About() {
   return (
-    <div>
-      <h1>This is my about page!</h1>
-    </div>
+    <Container>
+        <div>
+            <h1>This is my about page!</h1>
+        </div>
+    </Container>
   )
 }

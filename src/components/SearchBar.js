@@ -51,12 +51,12 @@ export default function SearchBar({ search, setSearch }) {
       }
 
     return (
-        <Search>
+        <Search style={{ boxShadow: '0 5px 20px rgba(0 0 0 / 10%)' }}>
             <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-                placeholder="Search…"
+                placeholder="Search By Reps, District or Ticker"
                 inputProps={{ 'aria-label': 'search' }}
                 onChange={handleOnChange}
                 value={search}

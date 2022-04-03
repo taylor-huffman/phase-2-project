@@ -13,6 +13,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 // import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { NavLink } from 'react-router-dom';
+import { AccountBalance } from '@mui/icons-material';
 
 
 export default function NavBar() {
@@ -127,6 +128,12 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton> */}
+          {/* <IconButton
+              size="large"
+              color="inherit"
+            > */}
+              <AccountBalance style={{ marginRight: '5px' }} />
+            {/* </IconButton> */}
           <Typography
             variant="h6"
             noWrap

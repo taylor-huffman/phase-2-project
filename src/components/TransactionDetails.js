@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Button } from '@mui/material'
+import { Button, Link } from '@mui/material'
 import { Close } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 import { UserContext } from '../context/user';
@@ -62,7 +62,7 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
             View PTR
           </Button>
         </Box>
-          <Button
+        {user ? <Button
                   variant="outlined"
                   color="primary"
                   size="small"
@@ -71,6 +71,12 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
                 >
                   Follow
                 </Button>
+                :
+                <Link href='/login' exact>
+                <p>Login to follow this representative</p>
+                </Link>
+                }
+          
       </div>
     
     )

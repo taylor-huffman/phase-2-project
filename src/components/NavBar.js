@@ -216,7 +216,7 @@ export default function NavBar() {
             style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '10px' }}
             activeStyle={{ color: '#add5db' }}
             >
-              LOG IN
+              LOGIN
             </NavLink>}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

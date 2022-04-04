@@ -14,6 +14,27 @@ export default function Login() {
         console.log(e.target.name.value)
         localStorage.setItem('currentUserName', e.target.name.value)
         setUser(e.target.name.value)
+        fetch(`http://localhost:4000/users?name=${localStorage.getItem('currentUserName')}`)
+        .then(r => r.json())
+        .then(data => {
+            debugger
+            if (data.length === 0) {
+                fetch('http://localhost:4000/users', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: e.target.name.value,
+                    following: []
+                })
+                })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+            })
+            }
+        })
         history.push('/account')
     }
 

@@ -3,6 +3,7 @@ import { DataGrid, GridToolbarContainer, GridToolbarColumnsButton, GridToolbarFi
 import { Box } from '@mui/material';
 import { styled } from '@mui/material';
 import { Button } from '@mui/material';
+// import { UserContext } from '../context/user'
 
 function CustomToolbar() {
   return (
@@ -41,6 +42,7 @@ const StyledGridOverlay = styled('div')(({ theme }) => ({
 export default function TransactionList({ transactions, setShowDetails }) {
 
   const [pageSize, setPageSize] = useState(20);
+  // const { user } = useContext(UserContext)
 
   function CustomNoRowsOverlay() {
     return (
@@ -91,6 +93,17 @@ export default function TransactionList({ transactions, setShowDetails }) {
 
   function handleOnClick(details) {
     setShowDetails(details)
+    // fetch(`http://localhost:4000/users?name=${user}`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     following: details.representative
+    //   })
+    // })
+    // .then(r => r.json())
+    // .then(data => console.log(data))
   }
 
   return (

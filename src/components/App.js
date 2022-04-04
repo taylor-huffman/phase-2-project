@@ -12,8 +12,17 @@ import Account from './Account';
 import Login from './Login';
 import { Route, Switch } from 'react-router-dom';
 import { UserProvider } from '../context/user';
+// import { useEffect } from 'react';
 
 function App() {
+
+  // const user = localStorage.getItem('currentUserName')
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:4000/users?name=${user}`)
+  //   .then(r => r.json())
+  //   .then(data => console.log(data))
+  // }, [user])
 
   // const [transactions, setTransactions] = useState([])
   // const [search, setSearch] = useState('')

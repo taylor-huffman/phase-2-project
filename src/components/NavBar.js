@@ -192,9 +192,10 @@ export default function NavBar() {
             {user ? <NavLink
             to='/account'
             exact
-            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
             activeStyle={{ color: '#add5db' }}
             >
+              {`HI, ${user.toUpperCase()}!`}
             <IconButton
               size="large"
               edge="end"

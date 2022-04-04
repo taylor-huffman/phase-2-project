@@ -34,8 +34,6 @@ function Home() {
       || transaction.ticker.toLowerCase() === search.toLowerCase()
     })
   
-    console.log(showDetails)
-  
     return (
         // <Box sx={{ flexGrow: 1 }}>
         <Container maxWidth='xxl' className='container home'>

@@ -8,7 +8,7 @@ function UserProvider({ children }) {
     //     name: "Taylor",
     // }
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(localStorage.getItem('currentUserName'))
 
     return (
         <UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>

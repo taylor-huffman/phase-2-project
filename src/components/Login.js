@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container } from '@mui/material'
 import { TextField, Box, Button } from '@mui/material'
+import { UserContext } from '../context/user'
+import { useHistory } from 'react-router-dom'
 
 export default function Login() {
+
+    const { setUser } = useContext(UserContext)
+    const history = useHistory()
 
     function handleOnSubmit(e) {
         e.preventDefault()
         console.log(e.target.name.value)
-        // localStorage.setItem('currentUserName', e.target.name.value)
+        localStorage.setItem('currentUserName', e.target.name.value)
+        setUser(e.target.name.value)
+        history.push('/account')
     }
 
   return (

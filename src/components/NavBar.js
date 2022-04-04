@@ -19,7 +19,7 @@ import { UserContext } from '../context/user';
 
 export default function NavBar() {
 
-  const user = useContext(UserContext)
+  const { user } = useContext(UserContext)
 
   // const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -106,15 +106,26 @@ export default function NavBar() {
         </NavLink>
       </MenuItem>
       <MenuItem>
+        {user ?
+        <NavLink
+        to='/account'
+        exact
+        style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+        activeStyle={{ color: '#1976d2' }}
+        onClick={handleMobileMenuClose}
+        >
+        ACCOUNT
+      </NavLink>
+      :
       <NavLink
-            to='/account'
-            exact
-            style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-            activeStyle={{ color: '#1976d2' }}
-            onClick={handleMobileMenuClose}
-            >
-            ACCOUNT
-            </NavLink>
+          to='/login'
+          exact
+          style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+          activeStyle={{ color: '#1976d2' }}
+          onClick={handleMobileMenuClose}
+          >
+          LOGIN
+        </NavLink>}
       </MenuItem>
     </Menu>
   );

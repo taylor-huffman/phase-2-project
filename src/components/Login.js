@@ -7,7 +7,7 @@ export default function Login() {
     function handleOnSubmit(e) {
         e.preventDefault()
         console.log(e.target.name.value)
-        localStorage.setItem('currentUserName', e.target.name.value)
+        // localStorage.setItem('currentUserName', e.target.name.value)
     }
 
   return (
@@ -33,7 +33,7 @@ export default function Login() {
                         // component="form"
                         variant="contained"
                         sx={{
-                            '& > :not(style)': { m: 1, width: '40ch', margin: 0, width: '100%' },
+                            '& > :not(style)': { m: 1, margin: 0, width: '100%' },
                         }}
                         type="submit"
                         >

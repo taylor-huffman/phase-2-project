@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Container } from '@mui/material'
+import { Container, Link, Button } from '@mui/material'
 import { UserContext } from '../context/user'
 
 export default function Account() {
@@ -8,9 +8,22 @@ export default function Account() {
 
     return (
         <Container maxWidth='lg'>
+            {user ?
             <div>
                 <h1>Welcome back, {user.name}!</h1>
             </div>
+            :
+            <div>
+                <h1>Click below to sign in!</h1>
+                <Link
+                    href='/login'
+                    exact
+                >
+                    <Button variant="contained">
+                        Sign In
+                    </Button>
+                </Link>
+            </div>}
         </Container>
     )
 }

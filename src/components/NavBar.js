@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,9 +14,13 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { NavLink } from 'react-router-dom';
 import { AccountBalance } from '@mui/icons-material';
+import { UserContext } from '../context/user';
 
 
 export default function NavBar() {
+
+  const user = useContext(UserContext)
+
   // const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -174,7 +178,7 @@ export default function NavBar() {
             >
               ABOUT
             </NavLink>
-            <NavLink
+            {user ? <NavLink
             to='/account'
             exact
             style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
@@ -193,6 +197,15 @@ export default function NavBar() {
               <AccountCircle />
             </IconButton>
             </NavLink>
+            :
+            <NavLink
+            to='/login'
+            exact
+            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '10px' }}
+            activeStyle={{ color: '#add5db' }}
+            >
+              LOG IN
+            </NavLink>}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton

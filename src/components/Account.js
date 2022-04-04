@@ -1,15 +1,18 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Container, Link, Button } from '@mui/material'
 import { UserContext } from '../context/user'
 
 export default function Account() {
 
     const { user } = useContext(UserContext)
+    const [userDetails, setUserDetails] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:4000/users?name=${user}`)
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => {
+            setUserDetails(data[0].following)
+        })
       }, [user])
 
     return (
@@ -17,6 +20,8 @@ export default function Account() {
             {user ?
             <div>
                 <h1>Welcome, {user}!</h1>
+                <h3>Politicians You're Following:</h3>
+                {userDetails.map(politician => <p key={politician}>{politician}</p>)}
             </div>
             :
             <div>

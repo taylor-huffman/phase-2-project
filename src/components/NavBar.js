@@ -89,14 +89,19 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <AccountBalance style={{ marginRight: '5px' }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { sm: 'block' } }}>
-              Congress Stock Tracker
-          </Typography>
+          <NavLink
+              to='/'
+              exact
+              style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', marginRight: '10px', textDecoration: 'none' }}>
+            <AccountBalance style={{ marginRight: '5px' }} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { sm: 'block' } }}>
+                Congress Stock Tracker
+            </Typography>
+          </NavLink>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <NavLink

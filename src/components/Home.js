@@ -1,10 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-// import NavBar from './NavBar';
 import TransactionDetails from './TransactionDetails';
 import TransactionList from './TransactionList';
 import SearchBar from './SearchBar';
-// import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
 
@@ -20,10 +18,6 @@ function Home() {
       .then(data => setTransactions(data))
     }, [])
   
-    // const representatives = [...new Set(transactions.map(item => item.representative))].map(item => {
-    //   return {label: item}
-    // })
-  
     const transactionsWithId = transactions.map((transaction, i) => {
       transaction.id = i + 1
       return {...transaction, id: transaction.id }
@@ -35,7 +29,6 @@ function Home() {
     })
   
     return (
-        // <Box sx={{ flexGrow: 1 }}>
         <Container maxWidth='xxl' className='container home'>
           <Grid container spacing={0} sx={{ flexGrow: 1 }}>
             <Grid item xs={3}>
@@ -47,7 +40,6 @@ function Home() {
             </Grid>
           </Grid>
           </Container>
-        // </Box>
     );
   }
 

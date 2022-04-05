@@ -4,10 +4,6 @@ const UserContext = React.createContext()
 
 function UserProvider({ children }) {
 
-    // const currentUser = {
-    //     name: "Taylor",
-    // }
-
     const [user, setUser] = useState(localStorage.getItem('currentUserName'))
 
     return (

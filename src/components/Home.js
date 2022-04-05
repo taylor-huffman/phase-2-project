@@ -13,34 +13,34 @@ function Home() {
     const [showDetails, setShowDetails] = useState(null)
   
     useEffect(() => {
-      fetch('https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json')
-      .then(r => r.json())
-      .then(data => setTransactions(data))
+        fetch('https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json')
+        .then(r => r.json())
+        .then(data => setTransactions(data))
     }, [])
   
     const transactionsWithId = transactions.map((transaction, i) => {
-      transaction.id = i + 1
-      return {...transaction, id: transaction.id }
+        transaction.id = i + 1
+        return {...transaction, id: transaction.id }
     }).filter(transaction => {
-      if (!search) return true
-      return transaction.representative.toLowerCase().includes(search.toLowerCase())
-      || transaction.district.toLowerCase().includes(search.toLowerCase())
-      || transaction.ticker.toLowerCase() === search.toLowerCase()
+        if (!search) return true
+        return transaction.representative.toLowerCase().includes(search.toLowerCase())
+        || transaction.district.toLowerCase().includes(search.toLowerCase())
+        || transaction.ticker.toLowerCase() === search.toLowerCase()
     })
   
     return (
         <Container maxWidth='xxl' className='container home'>
-          <Grid container spacing={0} sx={{ flexGrow: 1 }}>
-            <Grid item xs={3}>
-              <TransactionDetails showDetails={showDetails} setShowDetails={setShowDetails} />
+            <Grid container spacing={0} sx={{ flexGrow: 1 }}>
+                <Grid item xs={3}>
+                    <TransactionDetails showDetails={showDetails} setShowDetails={setShowDetails} />
+                </Grid>
+                <Grid item xs={9} style={{ padding: '40px 0' }}>
+                    <SearchBar search={search} setSearch={setSearch} />
+                    <TransactionList transactions={transactionsWithId} setShowDetails={setShowDetails} />
+                </Grid>
             </Grid>
-            <Grid item xs={9} style={{ padding: '40px 0' }}>
-              <SearchBar search={search} setSearch={setSearch} />
-              <TransactionList transactions={transactionsWithId} setShowDetails={setShowDetails} />
-            </Grid>
-          </Grid>
-          </Container>
+        </Container>
     );
-  }
+}
 
 export default Home

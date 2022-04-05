@@ -18,18 +18,18 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
     .then(r => r.json())
     .then(data => {
       fetch(`http://localhost:4000/users/${data[0].id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        following: data[0].following.includes(showDetails.representative) ? [...data[0].following] : [...data[0].following, showDetails.representative],
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          following: data[0].following.includes(showDetails.representative) ? [...data[0].following] : [...data[0].following, showDetails.representative],
+        })
       })
-    })
-    .then(r => r.json())
-    .then(data => {
-      console.log(data)
-    })
+      .then(r => r.json())
+      .then(data => {
+        console.log(data)
+      })
     })
   }
 
@@ -55,26 +55,24 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
             size="small"
             style={{ width: 200 }}
             target="_blank"
-            href={showDetails.ptr_link}
-          >
-            View PTR
+            href={showDetails.ptr_link}>
+              View PTR
           </Button>
         </Box>
-        {user ? <Button
-                  variant="outlined"
-                  color="primary"
-                  size="small"
-                  style={{ width: 200 }}
-                  onClick={handleFollowOnClick}
-                >
-                  Follow
-                </Button>
-                :
-                <Link href='/login' exact>
-                <p>Login to follow this representative</p>
-                </Link>
-                }
-          
+        {user ?
+          <Button
+            variant="outlined"
+            color="primary"
+            size="small"
+            style={{ width: 200 }}
+            onClick={handleFollowOnClick}>
+              Follow
+          </Button>
+          :
+          <Link href='/login' exact>
+            <p>Login to follow this representative</p>
+          </Link>
+        } 
       </div>
     
     )

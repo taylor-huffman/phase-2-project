@@ -10,10 +10,8 @@ export default function Account() {
     useEffect(() => {
         fetch(`http://localhost:4000/users?name=${user}`)
         .then(r => r.json())
-        .then(data => {
-            setUserDetails(data[0].following)
-        })
-      }, [user])
+        .then(data => setUserDetails(data[0].following))
+    }, [user])
 
     return (
         <Container maxWidth='lg'>
@@ -28,8 +26,7 @@ export default function Account() {
                 <h1>Click below to log in!</h1>
                 <Link
                     href='/login'
-                    exact
-                >
+                    exact>
                     <Button variant="contained">
                         Log In
                     </Button>

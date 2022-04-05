@@ -96,41 +96,40 @@ export default function TransactionList({ transactions, setShowDetails }) {
   return (
     <div style={{ height: '76vh', width: '100%' }}>
       <div style={{ display: 'flex', height: '100%' }}>
-      <div style={{ flexGrow: 1 }}>
-        <DataGrid
-          style={{ boxShadow: '0 10px 20px rgba(0 0 0 / 10%)' }}
-          pageSize={pageSize}
-          onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-          rowsPerPageOptions={[20, 50, 100]}
-          pagination
-          columns={[{ field: 'representative', headerName: 'Representative', minWidth: 250 },
-          { field: 'district', headerName: 'District', minWidth: 100  },
-          { field: 'ticker', headerName: 'Ticker', minWidth: 100  },
-          { field: 'amount', headerName: 'Amount', minWidth: 200  },
-          { field: 'type', headerName: 'Type', minWidth: 150  },
-          { field: 'transaction_date', headerName: 'Transaction Date', minWidth: 150  },
-          { field: 'learnMore', headerName: 'Learn More', minWidth: 220, 
-            renderCell: (param) => (
-              <strong>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  style={{ width: 200 }}
-                  target="_blank"
-                  onClick={() => handleOnClick(param.row)}
-                >
-                  Learn More
-                </Button>
-              </strong>
-            ),
-          }
-        ]}
-          rows={transactions}
-          components={{ Toolbar: CustomToolbar, NoRowsOverlay: CustomNoRowsOverlay }}
-        />
+        <div style={{ flexGrow: 1 }}>
+          <DataGrid
+            style={{ boxShadow: '0 10px 20px rgba(0 0 0 / 10%)' }}
+            pageSize={pageSize}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+            rowsPerPageOptions={[20, 50, 100]}
+            pagination
+            columns={[{ field: 'representative', headerName: 'Representative', minWidth: 250 },
+              { field: 'district', headerName: 'District', minWidth: 100  },
+              { field: 'ticker', headerName: 'Ticker', minWidth: 100  },
+              { field: 'amount', headerName: 'Amount', minWidth: 200  },
+              { field: 'type', headerName: 'Type', minWidth: 150  },
+              { field: 'transaction_date', headerName: 'Transaction Date', minWidth: 150  },
+              { field: 'learnMore', headerName: 'Learn More', minWidth: 220, 
+                renderCell: (param) => (
+                  <strong>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                      style={{ width: 200 }}
+                      target="_blank"
+                      onClick={() => handleOnClick(param.row)}>
+                        Learn More
+                    </Button>
+                  </strong>
+                ),
+              }
+            ]}
+            rows={transactions}
+            components={{ Toolbar: CustomToolbar, NoRowsOverlay: CustomNoRowsOverlay }}
+          />
         </div>
-    </div>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,7 +17,7 @@ export default function NavBar() {
 
   const { user } = useContext(UserContext)
 
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -35,27 +35,19 @@ export default function NavBar() {
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
+      anchorOrigin={{vertical: 'top', horizontal: 'right',}}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
+      transformOrigin={{vertical: 'top', horizontal: 'right',}}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <NavLink
           to='/'
           exact
           style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', marginRight: '10px', textDecoration: 'none' }}
           activeStyle={{ color: '#1976d2'}}
-          onClick={handleMobileMenuClose}
-          >
+          onClick={handleMobileMenuClose}>
             HOME
         </NavLink>
       </MenuItem>
@@ -65,32 +57,30 @@ export default function NavBar() {
           exact
           style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
           activeStyle={{ color: '#1976d2' }}
-          onClick={handleMobileMenuClose}
-          >
+          onClick={handleMobileMenuClose}>
             ABOUT
         </NavLink>
       </MenuItem>
       <MenuItem>
         {user ?
-        <NavLink
-        to='/account'
-        exact
-        style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-        activeStyle={{ color: '#1976d2' }}
-        onClick={handleMobileMenuClose}
-        >
-        ACCOUNT
-      </NavLink>
-      :
-      <NavLink
-          to='/login'
-          exact
-          style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-          activeStyle={{ color: '#1976d2' }}
-          onClick={handleMobileMenuClose}
-          >
-          LOGIN
-        </NavLink>}
+          <NavLink
+            to='/account'
+            exact
+            style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+            activeStyle={{ color: '#1976d2' }}
+            onClick={handleMobileMenuClose}>
+              ACCOUNT
+          </NavLink>
+          :
+          <NavLink
+            to='/login'
+            exact
+            style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+            activeStyle={{ color: '#1976d2' }}
+            onClick={handleMobileMenuClose}>
+              LOGIN
+          </NavLink>
+        }
       </MenuItem>
     </Menu>
   );
@@ -99,61 +89,57 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-              <AccountBalance style={{ marginRight: '5px' }} />
+          <AccountBalance style={{ marginRight: '5px' }} />
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { sm: 'block' } }}
-          >
-            Congress Stock Tracker
+            sx={{ display: { sm: 'block' } }}>
+              Congress Stock Tracker
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <NavLink
-            to='/'
-            exact
-            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', marginRight: '10px', textDecoration: 'none' }}
-            activeStyle={{ color: '#add5db'}}
-            >
-              HOME
+              to='/'
+              exact
+              style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', marginRight: '10px', textDecoration: 'none' }}
+              activeStyle={{ color: '#add5db'}}>
+                HOME
             </NavLink>
             <NavLink
-            to='/about'
-            exact
-            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-            activeStyle={{ color: '#add5db' }}
-            >
-              ABOUT
+              to='/about'
+              exact
+              style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+              activeStyle={{ color: '#add5db' }}>
+                ABOUT
             </NavLink>
-            {user ? <NavLink
-            to='/account'
-            exact
-            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
-            activeStyle={{ color: '#add5db' }}
-            >
-              {`HI, ${user.toUpperCase()}!`}
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              color="inherit"
-              activeStyle={{ color: '#add5db' }}
-            >
-              <AccountCircle />
-            </IconButton>
-            </NavLink>
-            :
-            <NavLink
-            to='/login'
-            exact
-            style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '10px' }}
-            activeStyle={{ color: '#add5db' }}
-            >
-              LOGIN
-            </NavLink>}
+            {user ?
+              <NavLink
+                to='/account'
+                exact
+                style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
+                activeStyle={{ color: '#add5db' }}>
+                  {`HI, ${user.toUpperCase()}!`}
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                color="inherit"
+                activeStyle={{ color: '#add5db' }}>
+                <AccountCircle />
+              </IconButton>
+              </NavLink>
+              :
+              <NavLink
+                to='/login'
+                exact
+                style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '10px' }}
+                activeStyle={{ color: '#add5db' }}>
+                  LOGIN
+              </NavLink>
+            }
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -162,8 +148,7 @@ export default function NavBar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <MoreIcon />
             </IconButton>
           </Box>

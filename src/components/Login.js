@@ -51,7 +51,7 @@ export default function Login() {
                                 variant="contained"
                                 sx={{'& > :not(style)': { m: 1, margin: 0, width: '100%' },}}
                                 type="submit">
-                                Log In
+                                    Log In
                             </Button>
                         </Box>
                     </Box>

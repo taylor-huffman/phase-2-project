@@ -11,7 +11,6 @@ export default function Account() {
         fetch(`http://localhost:4000/users?name=${user}`)
         .then(r => r.json())
         .then(data => {
-            console.log(data)
             setUserDetails(data[0].following)
         })
       }, [user])

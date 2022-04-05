@@ -17,7 +17,6 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
     fetch(`http://localhost:4000/users?name=${user}`)
     .then(r => r.json())
     .then(data => {
-      console.log(data)
       fetch(`http://localhost:4000/users/${data[0].id}`, {
       method: 'PATCH',
       headers: {
@@ -30,7 +29,6 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
     .then(r => r.json())
     .then(data => {
       console.log(data)
-      
     })
     })
   }

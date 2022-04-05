@@ -37,7 +37,7 @@ export default function Account() {
                     href='/login'
                     exact>
                     <Button variant="contained">
-                        Log In
+                        Login
                     </Button>
                 </Link>
             </div>}

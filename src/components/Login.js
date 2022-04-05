@@ -13,11 +13,11 @@ export default function Login() {
         e.preventDefault()
         localStorage.setItem('currentUserName', e.target.name.value)
         setUser(e.target.name.value)
-        fetch(`http://localhost:4000/users?name=${e.target.name.value}`)
+        fetch(`https://gentle-temple-41239.herokuapp.com/users?name=${e.target.name.value}`)
         .then(r => r.json())
         .then(data => {
             if (data.length === 0) {
-                fetch('http://localhost:4000/users', {
+                fetch('https://gentle-temple-41239.herokuapp.com/users', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'

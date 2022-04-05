@@ -14,10 +14,10 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
   }
 
   function handleFollowOnClick() {
-    fetch(`http://localhost:4000/users?name=${user}`)
+    fetch(`https://gentle-temple-41239.herokuapp.com/users?name=${user}`)
     .then(r => r.json())
     .then(data => {
-      fetch(`http://localhost:4000/users/${data[0].id}`, {
+      fetch(`https://gentle-temple-41239.herokuapp.com/users/${data[0].id}`, {
         method: 'PATCH',
         headers: {
           'Content-type': 'application/json'

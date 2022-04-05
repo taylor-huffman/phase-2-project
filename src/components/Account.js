@@ -8,7 +8,7 @@ export default function Account() {
     const [userDetails, setUserDetails] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/users?name=${user}`)
+        fetch(`https://gentle-temple-41239.herokuapp.com/users?name=${user}`)
         .then(r => r.json())
         .then(data => setUserDetails(data[0].following))
     }, [user])

@@ -27,14 +27,7 @@ export default function Account() {
                         </Link>
                     </>
                     : 
-                    userDetails.map(politician => {
-                        return <>
-                            <p key={politician}>{politician}</p>
-                            <Link href='/'>
-                                <p>Click to view more stock transactions.</p>
-                            </Link>
-                        </>
-                    })
+                    userDetails.map(politician => <p key={politician}>{politician}</p>)
                 }
             </div>
             :

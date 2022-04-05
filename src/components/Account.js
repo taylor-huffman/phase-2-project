@@ -19,7 +19,16 @@ export default function Account() {
             <div>
                 <h1>Welcome, {user}!</h1>
                 <h3>Politicians You're Following:</h3>
-                {userDetails === [] ? <p>You haven't followed anyone yet!</p> : userDetails.map(politician => <p key={politician}>{politician}</p>)}
+                {userDetails.length === 0 ?
+                    <>
+                        <p>You haven't followed anyone yet!</p>
+                        <Link href='/'>
+                            <p>Click here to view stock transactions.</p>
+                        </Link>
+                    </>
+                    : 
+                    userDetails.map(politician => <p key={politician}>{politician}</p>)
+                }
             </div>
             :
             <div>

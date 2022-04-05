@@ -44,7 +44,6 @@ export default function Login() {
             <h1>Login</h1>
             <form onSubmit={handleOnSubmit}>
             <Box
-                // component="form"
                 sx={{
                     '& > :not(style)': { m: 1, width: '40ch', display: 'flex', flexDirection: 'column', margin: '25px auto' },
                 }}
@@ -54,11 +53,10 @@ export default function Login() {
                 <TextField id="outlined-basic" label="Name" name='name' variant="outlined" />
                 <Box
                 sx={{
-                    '& > :not(style)': { m: 1, width: '40ch' },
+                    '& > :not(style)': { m: 1, width: '100%', margin: '8px 0' },
                 }}
                 >
                     <Button
-                        // component="form"
                         variant="contained"
                         sx={{
                             '& > :not(style)': { m: 1, margin: 0, width: '100%' },

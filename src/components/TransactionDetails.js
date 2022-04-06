@@ -14,10 +14,10 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
   }
 
   function handleFollowOnClick() {
-    fetch(`https://gentle-temple-41239.herokuapp.com/users?name=${user}`)
+    fetch(`${process.env.REACT_APP_API_URL}?name=${user}`)
     .then(r => r.json())
     .then(data => {
-      fetch(`https://gentle-temple-41239.herokuapp.com/users/${data[0].id}`, {
+      fetch(`${process.env.REACT_APP_API_URL}/${data[0].id}`, {
         method: 'PATCH',
         headers: {
           'Content-type': 'application/json'

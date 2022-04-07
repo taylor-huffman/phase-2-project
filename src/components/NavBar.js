@@ -68,14 +68,24 @@ export default function NavBar() {
       </MenuItem>
       <MenuItem>
         {user ?
-          <NavLink
-            to='/account'
-            exact
-            style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-            activeStyle={{ color: '#1976d2' }}
-            onClick={handleMobileMenuClose}>
-              ACCOUNT
-          </NavLink>
+          <>
+            <NavLink
+              to='/account'
+              exact
+              style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+              activeStyle={{ color: '#1976d2' }}
+              onClick={handleMobileMenuClose}>
+                ACCOUNT
+            </NavLink>
+            <NavLink
+              to='/'
+              onClick={handleLogOutOnClick}
+              exact
+              style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
+              activeStyle={{ color: '#add5db' }}>
+                LOGOUT
+            </NavLink>
+          </>
           :
           <NavLink
             to='/login'

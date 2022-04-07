@@ -66,37 +66,41 @@ export default function NavBar() {
             ABOUT
         </NavLink>
       </MenuItem>
-      <MenuItem>
         {user ?
           <>
+            <MenuItem>
+              <NavLink
+                to='/account'
+                exact
+                style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+                activeStyle={{ color: '#1976d2' }}
+                onClick={handleMobileMenuClose}>
+                  ACCOUNT
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to='/'
+                onClick={handleLogOutOnClick}
+                exact
+                style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
+                activeStyle={{ color: '#add5db' }}>
+                  LOGOUT
+              </NavLink>
+            </MenuItem>
+          </>
+          :
+          <MenuItem>
             <NavLink
-              to='/account'
+              to='/login'
               exact
               style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
               activeStyle={{ color: '#1976d2' }}
               onClick={handleMobileMenuClose}>
-                ACCOUNT
+                LOGIN
             </NavLink>
-            <NavLink
-              to='/'
-              onClick={handleLogOutOnClick}
-              exact
-              style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
-              activeStyle={{ color: '#add5db' }}>
-                LOGOUT
-            </NavLink>
-          </>
-          :
-          <NavLink
-            to='/login'
-            exact
-            style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-            activeStyle={{ color: '#1976d2' }}
-            onClick={handleMobileMenuClose}>
-              LOGIN
-          </NavLink>
+          </MenuItem>
         }
-      </MenuItem>
     </Menu>
   );
 

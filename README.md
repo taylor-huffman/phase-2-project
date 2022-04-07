@@ -11,14 +11,15 @@ NOTE: If you'd like to follow any of the politicians listed, click the 'LOGIN' l
 
 ![Congress Stock Tracker. Gif](./src/media/readme/video%20walkthrough.gif)
 
-## Project Setup
-Start by forking the project
+## Running the Project Locally - Project Setup Details
+### Frontend Setup
+Start by forking the frontend of the project
 
-![Fork The Project](./media/readme/forkproject.jpg)
+![Fork The Project](./src/media/readme/ph2%20-%20forkproject.jpg)
 
 Next, grab your SSH key. (Make sure you see your user name where the red text is)
 
-![Grab SSH Key](./media/readme/grabssh.jpg)
+![Grab SSH Key](./src/media/readme/ph2%20-%20grabssh.jpg)
 
 Next, navigate to your desired folder in Ubuntu and type in the following command to clone your newly created repo, making sure your username is taking place of 'your-user-name' in the url:
 
@@ -38,30 +39,61 @@ Once in the root folder, copy and paste the following command to open VS Code:
 code .
 ```
 
-Once VS Code is open, click " Ctrl + ` " to open the VS Code terminal. Then click the icon shown in the picture to split the terminal.
-
-![Split Terminal Icon Location](./media/readme/split.jpg)
-
-On either side of the split terminal, type in the following command. This will open a node terminal and display the json server:
+Once VS Code is open, click " Ctrl + ` " to open the VS Code terminal, then type in the following command to install the project dependencies:
 
 ```
-json-server --watch db.json
+npm install
 ```
 
-It Should look something like this:
+Leave the frontend project files open in VSCode as we'll return to it in just a minute.
 
-![Split Terminal with Json Server](./media/readme/jsonserver.png)
+### Backend Setup
+Next, fork the backend of the project. The backend can be found at the link below:
+https://github.com/taylor-huffman/json-server-template
 
-Once the server is running, open the index.html file with the following command in the terminal
+![Fork The Project](./src/media/readme/ph2%20-%20forkproject%20-%20backend.jpg)
+
+Next, grab your SSH key. (Make sure you see your user name where the red text is)
+
+![Grab SSH Key](./src/media/readme/ph2%20-%20grabssh%20-%20backend.jpg)
+
+Next, navigate to your desired folder in Ubuntu and type in the following command to clone your newly created repo, making sure your username is taking place of 'your-user-name' in the url:
 
 ```
-explorer.exe index.html
+git clone git@github.com:your-user-name/json-server-template.git
 ```
 
-Excellent! You did it! You're now ready to operate the app! Please proceed to the operation instructions.
+Then, navigate to the root folder of the project:
+
+```
+cd json-server-template/
+```
+
+Once in the root folder, copy and paste the following command to open VS Code:
+
+```
+code .
+```
+
+Once VS Code is open, click " Ctrl + ` " to open the VS Code terminal, then type in the following command to install the project dependencies:
+
+```
+npm install && npm run dev
+```
+
+Leave backend files open in VSCode.
+
+### Return to the frontend project files in VSCode
+In your terminal, type in the following command:
+```
+npm start
+```
+And there you have it, the Congress Stock Tracker app should now be open in your browser and you should have both the frontend and backend files open in VSCode, ready to modify as you see fit!
 
 ## Media and Data Credits
-Illustrations from [Openpeeps.com](https://www.openpeeps.com/) and created by Pablo Stanley
+Illustrations by Cristina Byvik and http://clipart-library.com
+
+Stock transaction data provided by https://housestockwatcher.com/api
 
 ## Contact Me For Questions
 Have any questions? Feel free to shoot me an email: [taylor@crucialartists.com](mailto:taylor@crucialartists.com)

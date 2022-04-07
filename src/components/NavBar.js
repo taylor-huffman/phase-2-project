@@ -34,6 +34,12 @@ export default function NavBar() {
     setUser(null)
   }
 
+  const handleMobileLogOutOnClick = () => {
+    localStorage.removeItem('currentUserName')
+    setUser(null)
+    setMobileMoreAnchorEl(null);
+  }
+
   const menuId = 'primary-search-account-menu';
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -81,10 +87,10 @@ export default function NavBar() {
             <MenuItem>
               <NavLink
                 to='/'
-                onClick={handleLogOutOnClick}
+                onClick={handleMobileLogOutOnClick}
                 exact
-                style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
-                activeStyle={{ color: '#add5db' }}>
+                style={{ color: 'black', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+                activeStyle={{ color: '#1976d2' }}>
                   LOGOUT
               </NavLink>
             </MenuItem>

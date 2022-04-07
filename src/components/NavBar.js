@@ -15,7 +15,7 @@ import { UserContext } from '../context/user';
 
 export default function NavBar() {
 
-  const { user } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
@@ -28,6 +28,11 @@ export default function NavBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleLogOutOnClick = () => {
+    localStorage.removeItem('currentUserName')
+    setUser(null)
+  }
 
   const menuId = 'primary-search-account-menu';
 
@@ -119,23 +124,33 @@ export default function NavBar() {
                 ABOUT
             </NavLink>
             {user ?
-              <NavLink
-                to='/account'
-                exact
-                style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
-                activeStyle={{ color: '#add5db' }}>
-                  {`HI, ${user.toUpperCase()}!`}
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                color="inherit"
-                activeStyle={{ color: '#add5db' }}>
-                <AccountCircle />
-              </IconButton>
-              </NavLink>
+              <>
+                <NavLink
+                  to='/account'
+                  exact
+                  style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
+                  activeStyle={{ color: '#add5db' }}>
+                    {`HI, ${user.toUpperCase()}!`}
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  color="inherit"
+                  activeStyle={{ color: '#add5db' }}>
+                  <AccountCircle />
+                </IconButton>
+                </NavLink>
+                <NavLink
+                  to='/'
+                  onClick={handleLogOutOnClick}
+                  exact
+                  style={{ color: 'white', fontWeight: '500', display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '15px' }}
+                  activeStyle={{ color: '#add5db' }}>
+                    LOGOUT
+                </NavLink>
+              </>
               :
               <NavLink
                 to='/login'

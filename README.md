@@ -1,72 +1,74 @@
-# Getting Started with Create React App
+# Congress Stock Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Congress Stock Tracker is an app that displays recent stock transactions of the United States Congress members and allows users to add members of congress that they choose to follow to their list.
 
-## Available Scripts
+## Visit The Live Site
+### How It Works 
+Simply visit https://peppy-alfajores-5631c4.netlify.app/ and begin viewing stock transactions.
 
-In the project directory, you can run:
+NOTE: If you'd like to follow any of the politicians listed, click the 'LOGIN' link in the navigation bar, enter your name to login, and then click back to the 'HOME' page to view transactions and click the 'FOLLOW' button under each of the transaction details to add that politician to your list.
 
-### `npm start`
+![Congress Stock Tracker. Gif](./src/media/readme/video%20walkthrough.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Setup
+Start by forking the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Fork The Project](./media/readme/forkproject.jpg)
 
-### `npm test`
+Next, grab your SSH key. (Make sure you see your user name where the red text is)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Grab SSH Key](./media/readme/grabssh.jpg)
 
-### `npm run build`
+Next, navigate to your desired folder in Ubuntu and type in the following command to clone your newly created repo, making sure your username is taking place of 'your-user-name' in the url:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone git@github.com:your-user-name/phase-2-project.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then, navigate to the root folder of the project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+cd phase-2-project/
+```
 
-### `npm run eject`
+Once in the root folder, copy and paste the following command to open VS Code:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+code .
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once VS Code is open, click " Ctrl + ` " to open the VS Code terminal. Then click the icon shown in the picture to split the terminal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Split Terminal Icon Location](./media/readme/split.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+On either side of the split terminal, type in the following command. This will open a node terminal and display the json server:
 
-## Learn More
+```
+json-server --watch db.json
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+It Should look something like this:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Split Terminal with Json Server](./media/readme/jsonserver.png)
 
-### Code Splitting
+Once the server is running, open the index.html file with the following command in the terminal
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+explorer.exe index.html
+```
 
-### Analyzing the Bundle Size
+Excellent! You did it! You're now ready to operate the app! Please proceed to the operation instructions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Media and Data Credits
+Illustrations from [Openpeeps.com](https://www.openpeeps.com/) and created by Pablo Stanley
 
-### Making a Progressive Web App
+## Contact Me For Questions
+Have any questions? Feel free to shoot me an email: [taylor@crucialartists.com](mailto:taylor@crucialartists.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Known Bugs/Deficiencies
+Current Deficiencies:
+There isn't currently a 'LOGOUT' button. If you're wanting to test this software with multiple users, you will need to delete the Local Storage item 'currentUserName' in your browers dev tools in order to 'log out' the current user.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# phase-2-project
-# phase-2-project
+## MIT License
+[Click to view license information](./MIT-LICENSE)

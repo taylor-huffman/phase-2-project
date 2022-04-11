@@ -73,7 +73,7 @@ export default function NavBar() {
         </NavLink>
       </MenuItem>
         {user ?
-          <>
+          <div>
             <MenuItem>
               <NavLink
                 to='/account'
@@ -94,7 +94,7 @@ export default function NavBar() {
                   LOGOUT
               </NavLink>
             </MenuItem>
-          </>
+          </div>
           :
           <MenuItem>
             <NavLink
@@ -144,7 +144,7 @@ export default function NavBar() {
                 ABOUT
             </NavLink>
             {user ?
-              <>
+              <div style={{ display: 'flex' }}>
                 <NavLink
                   to='/account'
                   exact
@@ -170,7 +170,7 @@ export default function NavBar() {
                   activeStyle={{ color: '#add5db' }}>
                     LOGOUT
                 </NavLink>
-              </>
+              </div>
               :
               <NavLink
                 to='/login'

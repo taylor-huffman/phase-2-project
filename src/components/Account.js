@@ -11,6 +11,7 @@ export default function Account() {
         fetch(`${process.env.REACT_APP_API_URL}?name=${user}`)
         .then(r => r.json())
         .then(data => setUserDetails(data[0].following))
+        .catch(error => console.log(error))
     }, [user])
 
     return (

@@ -31,8 +31,10 @@ export default function Login() {
                 .then(data => {
                     console.log(data)
                 })
+                .catch(error => console.log(error))
             }
         })
+        .catch(error => console.log(error))
         history.push('/account')
     }
 

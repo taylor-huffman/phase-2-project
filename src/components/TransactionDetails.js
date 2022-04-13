@@ -30,7 +30,9 @@ export default function TransactionDetails({ showDetails, setShowDetails }) {
       .then(data => {
         console.log(data)
       })
+      .catch(error => console.log(error))
     })
+    .catch(error => console.log(error))
   }
 
   function BuildDetails() {

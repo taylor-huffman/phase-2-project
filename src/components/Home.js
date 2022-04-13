@@ -16,6 +16,7 @@ function Home() {
         fetch('https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json')
         .then(r => r.json())
         .then(data => setTransactions(data))
+        .catch(error => console.log(error))
     }, [])
   
     const transactionsWithId = transactions.map((transaction, i) => {
